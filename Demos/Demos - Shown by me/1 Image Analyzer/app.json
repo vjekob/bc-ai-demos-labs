@@ -1,0 +1,23 @@
+{
+  "id": "c50cfd08-3d7c-4bc2-afde-f348cf918569",
+  "name": "Image Analysis",
+  "publisher": "Vjeko.com",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "idRange": {
+    "from": 50100,
+    "to": 50109
+  },
+  "runtime": "2.3"
+}

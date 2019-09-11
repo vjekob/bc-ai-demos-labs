@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Your own server",
+            "server": "http://redcarpet",
+            "serverInstance": "NAV",
+            "authentication": "UserPassword",
+            "startupObjectType": "Page",
+            "startupObjectId": 31,
+            "breakOnError": true
+        }
+    ]
+}

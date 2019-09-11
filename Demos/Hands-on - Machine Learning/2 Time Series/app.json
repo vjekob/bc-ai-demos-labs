@@ -1,0 +1,23 @@
+{
+  "id": "b3ec4d4a-e7f0-411d-b57f-223dcd4789b2",
+  "name": "Time Series",
+  "publisher": "Vjeko.com",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "idRange": {
+    "from": 50110,
+    "to": 50119
+  },
+  "runtime": "2.3"
+}

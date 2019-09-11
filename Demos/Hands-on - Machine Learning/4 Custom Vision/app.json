@@ -1,0 +1,24 @@
+{
+  "id": "3fde5599-7cd7-479d-9e97-a1d61d5a89ae",
+  "name": "Custom Vision Demo",
+  "publisher": "Vjeko.com",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "idRange": {
+    "from": 50136,
+    "to": 50139
+  },
+  "runtime": "2.3",
+  "target": "Internal"
+}

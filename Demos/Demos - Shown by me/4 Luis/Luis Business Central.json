@@ -1,0 +1,1816 @@
+{
+  "luis_schema_version": "3.2.0",
+  "versionId": "0.1",
+  "name": "Business Central",
+  "desc": "",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "intents": [
+    {
+      "name": "Customer.OpenCard"
+    },
+    {
+      "name": "Customer.SetImage"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "Record.Delete"
+    },
+    {
+      "name": "Record.New"
+    },
+    {
+      "name": "Record.Update"
+    },
+    {
+      "name": "SalesOrder.Create"
+    },
+    {
+      "name": "SalesOrder.Post"
+    },
+    {
+      "name": "SalesOrder.Release"
+    }
+  ],
+  "entities": [
+    {
+      "name": "BC.Customer",
+      "roles": []
+    },
+    {
+      "name": "BC.Field",
+      "roles": []
+    },
+    {
+      "name": "BC.FieldValue",
+      "roles": []
+    },
+    {
+      "name": "BC.Identifier",
+      "roles": []
+    },
+    {
+      "name": "BC.Item",
+      "roles": []
+    },
+    {
+      "name": "BC.SalesOrder",
+      "roles": []
+    }
+  ],
+  "composites": [
+    {
+      "name": "BC.RecordIdentifier",
+      "children": [
+        "BC.Identifier",
+        "BC.RecordType"
+      ],
+      "roles": []
+    },
+    {
+      "name": "BC.UpdateRecord",
+      "children": [
+        "BC.Field",
+        "BC.FieldValue",
+        "BC.Identifier",
+        "BC.RecordType"
+      ],
+      "roles": []
+    }
+  ],
+  "closedLists": [
+    {
+      "name": "BC.RecordType",
+      "subLists": [
+        {
+          "canonicalForm": "customer",
+          "list": [
+            "client",
+            "buyer"
+          ]
+        },
+        {
+          "canonicalForm": "vendor",
+          "list": [
+            "supplier",
+            "provider"
+          ]
+        },
+        {
+          "canonicalForm": "item",
+          "list": [
+            "product"
+          ]
+        },
+        {
+          "canonicalForm": "employee",
+          "list": [
+            "worker"
+          ]
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "patternAnyEntities": [
+    {
+      "name": "BC.Customer.Pattern",
+      "roles": [],
+      "explicitList": []
+    },
+    {
+      "name": "BC.Item.Pattern",
+      "roles": [],
+      "explicitList": []
+    },
+    {
+      "name": "BC.SalesOrder.Pattern",
+      "roles": [],
+      "explicitList": []
+    }
+  ],
+  "regex_entities": [],
+  "prebuiltEntities": [
+    {
+      "name": "url",
+      "roles": []
+    }
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [
+    {
+      "pattern": "sell {BC.Item.Pattern} to {BC.Customer.Pattern}",
+      "intent": "SalesOrder.Create"
+    },
+    {
+      "pattern": "post sales order {BC.SalesOrder.Pattern}",
+      "intent": "SalesOrder.Post"
+    },
+    {
+      "pattern": "release sales order {BC.SalesOrder.Pattern}",
+      "intent": "SalesOrder.Release"
+    },
+    {
+      "pattern": "remove customer {BC.Customer.Pattern}",
+      "intent": "Record.Delete"
+    },
+    {
+      "pattern": "make a new customer account named {BC.Customer.Pattern}",
+      "intent": "Record.New"
+    },
+    {
+      "pattern": "create a new customer {BC.Customer.Pattern}",
+      "intent": "Record.New"
+    },
+    {
+      "pattern": "create a new customer record for {BC.Customer.Pattern}",
+      "intent": "Record.New"
+    },
+    {
+      "pattern": "create a new customer with name {BC.Customer.Pattern}",
+      "intent": "Record.New"
+    },
+    {
+      "pattern": "open customer card for {BC.Customer.Pattern}",
+      "intent": "Customer.OpenCard"
+    },
+    {
+      "pattern": "delete customer {BC.Customer.Pattern}",
+      "intent": "Record.Delete"
+    },
+    {
+      "pattern": "open a new customer {BC.Customer.Pattern}",
+      "intent": "Record.New"
+    },
+    {
+      "pattern": "create new customer card for {BC.Customer.Pattern}",
+      "intent": "Record.New"
+    },
+    {
+      "pattern": "create customer {BC.Customer.Pattern}",
+      "intent": "Record.New"
+    },
+    {
+      "pattern": "open customer {BC.Customer.Pattern}",
+      "intent": "Customer.OpenCard"
+    },
+    {
+      "pattern": "book sales order {BC.SalesOrder.Pattern}",
+      "intent": "SalesOrder.Post"
+    },
+    {
+      "pattern": "create a new customer named {BC.Customer.Pattern}",
+      "intent": "Record.New"
+    },
+    {
+      "pattern": "open a new customer with name {BC.Customer.Pattern}",
+      "intent": "Record.New"
+    },
+    {
+      "pattern": "set {BC.Customer.Pattern} image to {url}",
+      "intent": "Customer.SetImage"
+    },
+    {
+      "pattern": "post order {BC.SalesOrder.Pattern} in sales",
+      "intent": "SalesOrder.Post"
+    }
+  ],
+  "utterances": [
+    {
+      "text": "can you change black sofa item general product posting group to particular",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.Identifier",
+          "startPos": 15,
+          "endPos": 24
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 15,
+          "endPos": 24
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 26,
+          "endPos": 29
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 31,
+          "endPos": 59
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 31,
+          "endPos": 59
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 61,
+          "endPos": 62
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 64,
+          "endPos": 73
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 64,
+          "endPos": 73
+        }
+      ]
+    },
+    {
+      "text": "can you change the description for vendor contoso publishing corporation to blablatronic goes to school?",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 19,
+          "endPos": 29
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 19,
+          "endPos": 29
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 31,
+          "endPos": 33
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 35,
+          "endPos": 40
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 42,
+          "endPos": 71
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 42,
+          "endPos": 71
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 73,
+          "endPos": 74
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 76,
+          "endPos": 102
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 76,
+          "endPos": 102
+        }
+      ]
+    },
+    {
+      "text": "can you modify the posting terms for customer john deere to 15d?",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.Field",
+          "startPos": 19,
+          "endPos": 31
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 19,
+          "endPos": 31
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 33,
+          "endPos": 35
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 37,
+          "endPos": 44
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 46,
+          "endPos": 55
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 46,
+          "endPos": 55
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 57,
+          "endPos": 58
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 60,
+          "endPos": 62
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 60,
+          "endPos": 62
+        }
+      ]
+    },
+    {
+      "text": "change customer spitfire services ltd's general business posting group to domestic",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 16,
+          "endPos": 36
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 16,
+          "endPos": 36
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 37,
+          "endPos": 38
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 40,
+          "endPos": 69
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 40,
+          "endPos": 69
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 71,
+          "endPos": 72
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 74,
+          "endPos": 81
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 74,
+          "endPos": 81
+        }
+      ]
+    },
+    {
+      "text": "change general product posting group for item 1920-s to manufactured",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 35
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 7,
+          "endPos": 35
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 37,
+          "endPos": 39
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 41,
+          "endPos": 44
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 46,
+          "endPos": 51
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 46,
+          "endPos": 51
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 53,
+          "endPos": 54
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 56,
+          "endPos": 67
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 56,
+          "endPos": 67
+        }
+      ]
+    },
+    {
+      "text": "change inventory posting group for item 1000 to retail",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.Field",
+          "startPos": 7,
+          "endPos": 29
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 29
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 31,
+          "endPos": 33
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 35,
+          "endPos": 38
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 40,
+          "endPos": 43
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 40,
+          "endPos": 43
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 45,
+          "endPos": 46
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 48,
+          "endPos": 53
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 48,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "change name for customer contoso incorporated to contoso ltd.",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.Field",
+          "startPos": 7,
+          "endPos": 10
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 10
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 16,
+          "endPos": 23
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 25,
+          "endPos": 44
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 25,
+          "endPos": 44
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 46,
+          "endPos": 47
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 49,
+          "endPos": 60
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 49,
+          "endPos": 60
+        }
+      ]
+    },
+    {
+      "text": "create a customer",
+      "intent": "Record.New",
+      "entities": []
+    },
+    {
+      "text": "create a customer card for bizmax",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 27,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "create a new customer",
+      "intent": "Record.New",
+      "entities": []
+    },
+    {
+      "text": "create a new customer card",
+      "intent": "Record.New",
+      "entities": []
+    },
+    {
+      "text": "create a new customer record for grandmax services ltd.",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 13,
+          "endPos": 20
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 22,
+          "endPos": 31
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 33,
+          "endPos": 54
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 33,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "create a new customer with name novavision",
+      "intent": "Record.New",
+      "entities": []
+    },
+    {
+      "text": "create customer named contoso corporation",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 22,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "create new customer account named babic & babic",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 11,
+          "endPos": 18
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 28,
+          "endPos": 32
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 34,
+          "endPos": 46
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 34,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "create new customer blackbeard shipments",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 11,
+          "endPos": 18
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 20,
+          "endPos": 39
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 20,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "create new customer contoso blackbeard shipping enterprises",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 11,
+          "endPos": 18
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 20,
+          "endPos": 58
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 20,
+          "endPos": 58
+        }
+      ]
+    },
+    {
+      "text": "create new customer cust",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 20,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "delete customer contoso publishing",
+      "intent": "Record.Delete",
+      "entities": [
+        {
+          "entity": "BC.Identifier",
+          "startPos": 16,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "establish a new customer record named waldorf & statler",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 16,
+          "endPos": 23
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 25,
+          "endPos": 36
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 38,
+          "endPos": 54
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 38,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "establish a new item named blablatron",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 16,
+          "endPos": 19
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 21,
+          "endPos": 25
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 27,
+          "endPos": 36
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 27,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "how far to the moon?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 8,
+          "endPos": 9
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 11,
+          "endPos": 18
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 11,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "i need a new customer record for conglobiz",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 33,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "i need a new customer record for sportsmeyer furnishings",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 33,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "make a new customer account for john doe inc.",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 11,
+          "endPos": 18
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 28,
+          "endPos": 30
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 32,
+          "endPos": 44
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 32,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "make a new customer bizmax",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "make a new customer named fishmeyer industries",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 26,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "make a new customer record for lanister gold enterprises",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 11,
+          "endPos": 18
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 20,
+          "endPos": 29
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 31,
+          "endPos": 55
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 31,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "make new customer _",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 18,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "modify big blue screen product description to blatantly big fat screen for cinemas",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.Identifier",
+          "startPos": 7,
+          "endPos": 21
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 21
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 23,
+          "endPos": 29
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 31,
+          "endPos": 41
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 31,
+          "endPos": 41
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 43,
+          "endPos": 44
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 46,
+          "endPos": 81
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 46,
+          "endPos": 81
+        }
+      ]
+    },
+    {
+      "text": "open a customer account fishmeyer industries",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 24,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "open a new customer",
+      "intent": "Record.New",
+      "entities": []
+    },
+    {
+      "text": "open a new customer named contoso publishing",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 26,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "open a new customer record named spitfire design",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 33,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "open a new customer with name spitfire furnishings inc.",
+      "intent": "Record.New",
+      "entities": [
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 11,
+          "endPos": 18
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 20,
+          "endPos": 28
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 30,
+          "endPos": 54
+        },
+        {
+          "entity": "BC.RecordIdentifier",
+          "startPos": 30,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "please set contoso publishing's customer payment method to cheque",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.Identifier",
+          "startPos": 11,
+          "endPos": 28
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 11,
+          "endPos": 28
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 29,
+          "endPos": 30
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 32,
+          "endPos": 39
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 41,
+          "endPos": 54
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 41,
+          "endPos": 54
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 56,
+          "endPos": 57
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 59,
+          "endPos": 64
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 59,
+          "endPos": 64
+        }
+      ]
+    },
+    {
+      "text": "sell item item to customer",
+      "intent": "SalesOrder.Create",
+      "entities": [
+        {
+          "entity": "BC.Item",
+          "startPos": 10,
+          "endPos": 13
+        },
+        {
+          "entity": "BC.Customer",
+          "startPos": 18,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "set _ image to url",
+      "intent": "Customer.SetImage",
+      "entities": [
+        {
+          "entity": "BC.Customer",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "set dark black chair item currency code to eur",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.Identifier",
+          "startPos": 4,
+          "endPos": 19
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 4,
+          "endPos": 19
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 21,
+          "endPos": 24
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 26,
+          "endPos": 38
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 26,
+          "endPos": 38
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 40,
+          "endPos": 41
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 43,
+          "endPos": 45
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 43,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "set employee john roberts's gender to male",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 4,
+          "endPos": 11
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 13,
+          "endPos": 24
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 13,
+          "endPos": 24
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 25,
+          "endPos": 26
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 28,
+          "endPos": 33
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 28,
+          "endPos": 33
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 35,
+          "endPos": 36
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 38,
+          "endPos": 41
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 38,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "set requisitin method for item bicycle to manual",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.Field",
+          "startPos": 4,
+          "endPos": 20
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 4,
+          "endPos": 20
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 22,
+          "endPos": 24
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 26,
+          "endPos": 29
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 31,
+          "endPos": 37
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 31,
+          "endPos": 37
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 39,
+          "endPos": 40
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 42,
+          "endPos": 47
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 42,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "set vendor currency for meyer deliveries to eur",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 4,
+          "endPos": 9
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 11,
+          "endPos": 18
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 11,
+          "endPos": 18
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 20,
+          "endPos": 22
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 24,
+          "endPos": 39
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 24,
+          "endPos": 39
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 41,
+          "endPos": 42
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 44,
+          "endPos": 46
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 44,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "tell me about your mom",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "update address 2 for vendor porgmorg shipments inc. to 900 12th avenue ne, seattle",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.Field",
+          "startPos": 7,
+          "endPos": 15
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 15
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 17,
+          "endPos": 19
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 21,
+          "endPos": 26
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 28,
+          "endPos": 50
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 28,
+          "endPos": 50
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 52,
+          "endPos": 53
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 55,
+          "endPos": 81
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 55,
+          "endPos": 81
+        }
+      ]
+    },
+    {
+      "text": "update bicycle item no. to 1200",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.Identifier",
+          "startPos": 7,
+          "endPos": 13
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 13
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 15,
+          "endPos": 18
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 20,
+          "endPos": 22
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 20,
+          "endPos": 22
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 24,
+          "endPos": 25
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 27,
+          "endPos": 30
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 27,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "update brown cat's vendor shipment name to aerodromios kalytechnis epiheirisis",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 15
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 7,
+          "endPos": 15
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 16,
+          "endPos": 17
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 19,
+          "endPos": 24
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 26,
+          "endPos": 38
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 26,
+          "endPos": 38
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 40,
+          "endPos": 41
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 43,
+          "endPos": 77
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 43,
+          "endPos": 77
+        }
+      ]
+    },
+    {
+      "text": "update customer anders meyer's payment terms to 1m",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 16,
+          "endPos": 27
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 16,
+          "endPos": 27
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 28,
+          "endPos": 29
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 31,
+          "endPos": 43
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 31,
+          "endPos": 43
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 45,
+          "endPos": 46
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 48,
+          "endPos": 49
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 48,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "update customer contoso's payment terms to 7d",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 16,
+          "endPos": 22
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 16,
+          "endPos": 22
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 23,
+          "endPos": 24
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 26,
+          "endPos": 38
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 26,
+          "endPos": 38
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 40,
+          "endPos": 41
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 43,
+          "endPos": 44
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 43,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "update customer john doe's currency code to hrk",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 16,
+          "endPos": 23
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 16,
+          "endPos": 23
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 24,
+          "endPos": 25
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 27,
+          "endPos": 39
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 27,
+          "endPos": 39
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 41,
+          "endPos": 42
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 44,
+          "endPos": 46
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 44,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "update customer name for spitfire furnishings to spitfire furnishings inc.",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 14
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 16,
+          "endPos": 19
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 16,
+          "endPos": 19
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 21,
+          "endPos": 23
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 25,
+          "endPos": 44
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 25,
+          "endPos": 44
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 46,
+          "endPos": 47
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 49,
+          "endPos": 73
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 49,
+          "endPos": 73
+        }
+      ]
+    },
+    {
+      "text": "update item description for bicycle to touring bicycle",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 10
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 12,
+          "endPos": 22
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 12,
+          "endPos": 22
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 24,
+          "endPos": 26
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 28,
+          "endPos": 34
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 28,
+          "endPos": 34
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 36,
+          "endPos": 37
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 39,
+          "endPos": 53
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 39,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "update table item description to new art deco pedestal table with green top",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.Identifier",
+          "startPos": 7,
+          "endPos": 11
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 11
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 13,
+          "endPos": 16
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 18,
+          "endPos": 28
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 18,
+          "endPos": 28
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 30,
+          "endPos": 31
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 33,
+          "endPos": 74
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 33,
+          "endPos": 74
+        }
+      ]
+    },
+    {
+      "text": "update vendor address for contoso deliveries to 900 bellevue way, bellevue",
+      "intent": "Record.Update",
+      "entities": [
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 7,
+          "endPos": 12
+        },
+        {
+          "entity": "BC.Field",
+          "startPos": 14,
+          "endPos": 20
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 14,
+          "endPos": 20
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 22,
+          "endPos": 24
+        },
+        {
+          "entity": "BC.Identifier",
+          "startPos": 26,
+          "endPos": 43
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 26,
+          "endPos": 43
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 45,
+          "endPos": 46
+        },
+        {
+          "entity": "BC.FieldValue",
+          "startPos": 48,
+          "endPos": 73
+        },
+        {
+          "entity": "BC.UpdateRecord",
+          "startPos": 48,
+          "endPos": 73
+        }
+      ]
+    },
+    {
+      "text": "what's the best restaurant in tokyo?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who killed jfk?",
+      "intent": "None",
+      "entities": []
+    }
+  ],
+  "settings": []
+}

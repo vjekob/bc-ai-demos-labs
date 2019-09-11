@@ -1,0 +1,23 @@
+{
+  "id": "e703cedf-ff4c-499c-878d-0c4899af1f36",
+  "name": "Classification Demo",
+  "publisher": "Vjeko.com",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "idRange": {
+    "from": 50130,
+    "to": 50139
+  },
+  "runtime": "2.3"
+}

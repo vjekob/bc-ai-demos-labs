@@ -1,0 +1,23 @@
+{
+  "id": "fe84dccc-a0ab-4fb7-9066-db6d2760e4cd",
+  "name": "Handwriting Recognition",
+  "publisher": "Vjeko.com",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "idRange": {
+    "from": 50140,
+    "to": 50149
+  },
+  "runtime": "2.3"
+}

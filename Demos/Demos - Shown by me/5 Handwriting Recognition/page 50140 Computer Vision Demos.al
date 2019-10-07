@@ -24,7 +24,7 @@ page 50140 "Computer Vision Demos"
 
                 trigger OnAction();
                 var
-                    TempBlob: Record TempBlob temporary;
+                    TempBlob: Codeunit "Temp Blob";
                     FileMng: Codeunit "File Management";
                     ComputerVisionMgt: Codeunit "Computer Vision Management";
                 begin

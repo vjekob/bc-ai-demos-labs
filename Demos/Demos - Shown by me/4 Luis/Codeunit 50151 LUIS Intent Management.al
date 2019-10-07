@@ -50,7 +50,6 @@ codeunit 50151 "LUIS Intent Management"
     var
         CustFind: Record Customer;
         Cust: Record Customer;
-        TempBlob: Record TempBlob;
         CLient: HttpClient;
         REsponse: HttpResponseMessage;
         Stream: InStream;
@@ -61,13 +60,25 @@ codeunit 50151 "LUIS Intent Management"
         if CustFind.FindFirst() then begin
             Cust.Get(CustFind."No.");
             //Client.Get(Url, Response);
-            TempBlob.TryDownloadFromUrl(Url);
+            TryDownloadFromUrl(Stream, Url);
             //Response.COntent.ReadAs(Stream);
-            TempBlob.Blob.CreateInStream(Stream);
             FileId := CreateGuid;
             Cust.Image.ImportStream(Stream, FileId);
             Cust.Modify(true);
         end;
+    end;
+
+    local procedure TryDownloadFromUrl(var InStream: InStream; Url: Text)
+    var
+        HttClient: HttpClient;
+        HttpResponseMessage: HttpResponseMessage;
+        OutStream: OutStream;
+        TempBlob: Codeunit "Temp Blob";
+    begin
+        HttClient.Get(url, HttpResponseMessage);
+        HttpResponseMessage.Content.ReadAs(InStream);
+        TempBlob.CreateOutStream(OutStream);
+        CopyStream(OutStream, InStream);
     end;
 
     procedure CustomerOpenCard(Entity: Text);

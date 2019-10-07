@@ -2,7 +2,7 @@ pageextension 50101 "Item Card Extension" extends "Item Card"
 {
     actions
     {
-        addlast(Item)
+        addlast(ItemActionGroup)
         {
             action(ImageAnalysis)
             {

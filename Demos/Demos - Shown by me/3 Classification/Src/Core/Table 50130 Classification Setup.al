@@ -43,57 +43,45 @@ table 50130 "Classification Setup"
         }
     }
 
-    procedure GetModel(): Text
+    procedure GetModel() Content: Text
     var
-        TypeHelper: Codeunit "Type Helper";
-        BlobRef: FieldRef;
-        RecRef: RecordRef;
+        TempBlob: Codeunit "Temp Blob";
+        InStream: InStream;
     begin
-        RecRef.GetTable(Rec);
-        BlobRef := RecRef.Field(FieldNo("Sales Volume Model"));
-        exit(TypeHelper.ReadBlob(BlobRef));
+        TempBlob.FromRecord(Rec, FieldNo("Sales Volume Model"));
+        TempBlob.CreateInStream(InStream, TextEncoding::UTF8);
+        InStream.Read(Content);
     end;
 
     procedure SetModel(Model: Text)
     var
-        TypeHelper: Codeunit "Type Helper";
-        RecRef: RecordRef;
+        OutStream: OutStream;
     begin
         if not Rec.Get() then
             Rec.Insert();
 
-        RecRef.GetTable(Rec);
-        TypeHelper.SetBlobString(
-            RecRef,
-            FieldNo("Sales Volume Model"),
-            Model);
-        RecRef.SetTable(Rec);
+        "Sales Volume Model".CreateOutStream(OutStream, TextEncoding::UTF8);
+        OutStream.Write(Model);
     end;
 
-    procedure GetTitanicModel(): Text
+    procedure GetTitanicModel() Content: Text
     var
-        TypeHelper: Codeunit "Type Helper";
-        BlobRef: FieldRef;
-        RecRef: RecordRef;
+        TempBlob: Codeunit "Temp Blob";
+        InStream: InStream;
     begin
-        RecRef.GetTable(Rec);
-        BlobRef := RecRef.Field(FieldNo("Titanic Prediction Model"));
-        exit(TypeHelper.ReadBlob(BlobRef));
+        TempBlob.FromRecord(Rec, FieldNo("Titanic Prediction Model"));
+        TempBlob.CreateInStream(InStream, TextEncoding::UTF8);
+        InStream.Read(Content);
     end;
 
     procedure SetTitanicModel(Model: Text)
     var
-        TypeHelper: Codeunit "Type Helper";
-        RecRef: RecordRef;
+        OutStream: OutStream;
     begin
         if not Rec.Get() then
             Rec.Insert();
 
-        RecRef.GetTable(Rec);
-        TypeHelper.SetBlobString(
-            RecRef,
-            FieldNo("Titanic Prediction Model"),
-            Model);
-        RecRef.SetTable(Rec);
+        "Titanic Prediction Model".CreateOutStream(OutStream, TextEncoding::UTF8);
+        OutStream.Write(Model);
     end;
 }

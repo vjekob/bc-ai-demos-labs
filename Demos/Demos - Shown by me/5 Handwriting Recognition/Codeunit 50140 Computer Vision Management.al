@@ -36,7 +36,7 @@ codeunit 50140 "Computer Vision Management"
         end;
     end;
 
-    local procedure PostBlob(Url: Text; TempBlob: Record TempBlob; var Response: HttpResponseMessage);
+    local procedure PostBlob(Url: Text; TempBlob: Codeunit "Temp Blob"; var Response: HttpResponseMessage);
     var
         Client: HttpClient;
         Content: HttpContent;
@@ -49,7 +49,7 @@ codeunit 50140 "Computer Vision Management"
         Authorize(Headers);
         SetContentType(Content, 'application/octet-stream');
 
-        TempBlob.Blob.CreateInStream(Stream);
+        TempBlob.CreateInStream(Stream);
         Content.WriteFrom(Stream);
         MakeSureNoError(Client.Post(Url, Content, ResponseMessage), ResponseMessage);
         Response := ResponseMessage;
@@ -107,7 +107,7 @@ codeunit 50140 "Computer Vision Management"
         end;
     end;
 
-    procedure RecognizeHandwriting(TempBlob: Record TempBlob): Text;
+    procedure RecognizeHandwriting(TempBlob: Codeunit "Temp Blob"): Text;
     var
         Response: HttpResponseMessage;
         Headers: HttpHeaders;
